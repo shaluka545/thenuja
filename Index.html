@@ -3,76 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-
+    <title>Janith Sathsara | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* මූලික සැකසුම් */
+        * {
             margin: 0;
-            background: #f4f4f4;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #0a0a0a; /* තද කළු පැහැය */
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
             text-align: center;
         }
 
-        header {
-            background: #333;
-            color: white;
+        /* Navbar */
+        nav {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #888;
+        }
+
+        /* Profile Section */
+        .hero {
+            margin-top: 50px;
             padding: 20px;
         }
 
-        img {
-            width: 150px;
-            height: 150px;
+        .profile-img {
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            margin-top: 10px;
+            border: 4px solid #1a1a1a;
+            object-fit: cover;
+            margin-bottom: 20px;
         }
 
-        section {
-            padding: 20px;
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
         }
 
-        .projects a {
-            display: block;
-            margin: 10px;
-            text-decoration: none;
-            color: blue;
+        .verified-icon {
+            color: #3b82f6; /* Blue check color */
+            font-size: 1.2rem;
         }
 
-        footer {
-            background: #333;
+        .japanese-name {
+            color: #ccc;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        /* Tag Labels (DJ, Producer, Coder etc.) */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            max-width: 500px;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            border: 1px solid #333;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #eee;
+            transition: 0.3s;
+        }
+
+        .tag:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* Social Icons */
+        .socials {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .socials a {
             color: white;
-            padding: 10px;
-            margin-top: 20px;
+            font-size: 1.5rem;
+            text-decoration: none;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            opacity: 1;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #666;
         }
     </style>
 </head>
-
 <body>
 
-<header>
-    <h1>Your Name</h1>
-    <p>Web Developer / Student</p>
-</header>
+    <nav>
+        <div class="logo">JANITH<span>SATHSARA</span></div>
+        <div class="menu-icon"><i class="fas fa-bars"></i></div>
+    </nav>
 
-<section>
-    <img src="your-photo.jpg" alt="My Photo">
-    <h2>About Me</h2>
-    <p>
-        මෙතනට ඔයාගේ විස්තර දාන්න. (උදා: මම web developer කෙනෙක්. HTML, CSS, JavaScript ඉගෙන ගන්නවා.)
-    </p>
-</section>
+    <div class="hero">
+        <img src="https://files.catbox.moe/924js9.jpg" alt="Profile" class="profile-img">
+        
+        <h1>Janith Sathsara <i class="fas fa-check-circle verified-icon"></i></h1>
+        <p class="japanese-name">ジャニット・サトサラ</p>
 
-<section class="projects">
-    <h2>My Projects</h2>
+        <div class="tags">
+            <span class="tag">Web Developer</span>
+            <span class="tag">Student</span>
+            <span class="tag">Designer</span>
+            <span class="tag">Coder</span>
+        </div>
 
-    <a href="https://yourproject1.com" target="_blank">Project 1</a>
-    <a href="https://yourproject2.com" target="_blank">Project 2</a>
-    <a href="https://yourproject3.com" target="_blank">Project 3</a>
+        <div class="socials">
+            <a href="https://699e9865958c4ea1793a3892--super-cucurucho-62c58a.netlify.app/"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="https://6995e8dcb240941c32bdc314--grand-stroopwafel-baffa5.netlify.app/"><i class="mini-bot"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-spotify"></i></a>
+        </div>
+    </div>
 
-</section>
-
-<footer>
-    <p>© 2026 Your Name</p>
-</footer>
+    <footer>
+        <p>Janith Sathsara</p>
+        <div class="socials" style="margin-top: 10px; font-size: 0.8rem; justify-content: center;">
+            </div>
+    </footer>
 
 </body>
 </html>
