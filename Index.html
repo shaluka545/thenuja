@@ -45,7 +45,6 @@
 
         .logo span { color: #555; }
 
-        /* Menu Button (Hamburger) */
         .menu-btn {
             font-size: 1.8rem;
             cursor: pointer;
@@ -53,7 +52,7 @@
             color: #fff;
         }
 
-        /* Overlay Menu (ඔබපු ගමන් එන තිරය) */
+        /* Navigation Overlay */
         .nav-overlay {
             position: fixed;
             top: 0;
@@ -132,7 +131,7 @@
         /* Sections Styling */
         section {
             padding: 100px 20px;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             text-align: center;
             border-top: 1px solid #111;
@@ -151,12 +150,74 @@
         .info-row { margin: 15px 0; font-size: 1.1rem; }
         .info-row b { color: #fff; margin-right: 10px; }
 
+        /* Projects Grid Layout */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background: #0f0f0f;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #1a1a1a;
+            transition: 0.3s ease;
+            text-align: center;
+        }
+
+        .project-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .project-icon {
+            font-size: 2.5rem;
+            color: #3b82f6;
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            color: #fff;
+        }
+
+        .project-card p {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        /* Styled Button */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #3b82f6;
+            color: #fff;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+
         /* Footer */
         footer {
-            padding: 40px;
+            padding: 60px 40px;
             text-align: center;
-            color: #222;
+            color: #444;
             font-size: 0.9rem;
+            border-top: 1px solid #111;
         }
 
         /* Mobile Adjustments */
@@ -164,6 +225,7 @@
             h1 { font-size: 2rem; }
             header { padding: 20px; }
             .close-btn { right: 20px; }
+            .project-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -207,7 +269,7 @@
         <div class="content-card">
             <div class="info-row"><b>Full Name:</b> D.M. Janith Sathsara</div>
             <div class="info-row"><b>Age:</b> 18</div>
-            <div class="info-row"><b>Passion:</b> Creating unique digital experiences through clean code.</div>
+            <div class="info-row"><b>Passion:</b> Creating unique digital experiences through clean code and modern design.</div>
         </div>
     </section>
 
@@ -222,15 +284,36 @@
 
     <section id="projects">
         <h2>Projects</h2>
-        <div class="content-card">
-            <p>Modern Web Portfolios, Mini Automation Bots, and Responsive Templates.</p>
+        <div class="project-grid">
+            <div class="project-card">
+                <i class="fab fa-facebook-f project-icon"></i>
+                <h3>FB Video Downloader</h3>
+                <p>පහසුවෙන් ෆේස්බුක් වීඩියෝ බාගත කරගත හැකි වේගවත් වෙබ් අඩවියකි.</p>
+                <a href="https://699e9865958c4ea1793a3892--super-cucurucho-62c58a.netlify.app/" target="_blank" class="btn">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <i class="fas fa-robot project-icon"></i>
+                <h3>Mini Bot Site</h3>
+                <p>ස්වයංක්‍රීය බොට් තාක්ෂණයන් සහ විශේෂාංග ඇතුළත් සරල වෙබ් අඩවියකි.</p>
+                <a href="https://6995e8dcb240941c32bdc314--grand-stroopwafel-baffa5.netlify.app/" target="_blank" class="btn">View Project</a>
+            </div>
         </div>
     </section>
 
     <section id="services">
         <h2>Services</h2>
-        <div class="content-card">
-            <p>Custom Web Design, Frontend Development, and Graphics Design.</p>
+        <div class="project-grid">
+            <div class="project-card">
+                <i class="fas fa-code project-icon"></i>
+                <h3>Web Design</h3>
+                <p>Professional and Responsive layouts.</p>
+            </div>
+            <div class="project-card">
+                <i class="fas fa-paint-brush project-icon"></i>
+                <h3>Graphics</h3>
+                <p>Creative UI and Photoshop editing.</p>
+            </div>
         </div>
     </section>
 
@@ -239,11 +322,16 @@
         <div class="content-card">
             <div class="info-row"><b>Email:</b> jsathsara441@gmail.com</div>
             <div class="info-row"><b>WhatsApp:</b> +94 76 142 7943</div>
+            <br>
+            <div class="socials" style="justify-content: center;">
+                <a href="https://www.facebook.com/share/1CCx4tUSzi/"><i class="fab fa-facebook"></i></a>
+                <a href="https://github.com/jsathsara441-del/"><i class="fab fa-github"></i></a>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>JANITH SATHSARA &copy; 2026</p>
+        <p>JANITH SATHSARA &copy; 2026 | All Rights Reserved</p>
     </footer>
 
     <script>
@@ -251,7 +339,6 @@
             const menu = document.getElementById('navOverlay');
             menu.classList.toggle('active');
             
-            // Disable scroll when menu is open
             if(menu.classList.contains('active')) {
                 document.body.style.overflow = 'hidden';
             } else {
