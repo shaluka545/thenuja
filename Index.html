@@ -14,230 +14,251 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth; /* Smooth scrolling effect */
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: #0a0a0a;
+            background-color: #050505;
             color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        /* Navbar */
-        nav {
+        /* Header & Logo */
+        header {
+            position: fixed;
+            top: 0;
             width: 100%;
-            padding: 30px;
+            padding: 25px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1100px;
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(10px);
         }
 
         .logo {
             font-size: 1.2rem;
             font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .logo span {
-            color: #555;
+        .logo span { color: #555; }
+
+        /* Menu Button (Hamburger) */
+        .menu-btn {
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: 0.3s;
+            color: #fff;
         }
 
-        /* Navigation Links (අලුතින් එකතු කළ කොටස) */
-        .nav-container {
+        /* Overlay Menu (ඔබපු ගමන් එන තිරය) */
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 1100px;
-            padding: 20px 30px;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            transform: translateY(-100%);
+            transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
         }
 
-        .nav-item {
-            text-decoration: none;
-            color: #666; /* අඳුරු පැහැය */
-            font-size: 1.5rem;
+        .nav-overlay.active {
+            transform: translateY(0);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            font-size: 2.5rem;
+            cursor: pointer;
+        }
+
+        .nav-overlay a {
+            font-size: 2.5rem;
             font-weight: 600;
-            transition: 0.3s ease;
-            width: fit-content;
+            color: #444;
+            text-decoration: none;
+            margin: 15px 0;
+            transition: 0.3s;
         }
 
-        .nav-item:hover, .nav-item.active {
-            color: #ffffff;
-            transform: translateX(10px);
+        .nav-overlay a:hover {
+            color: #fff;
+            transform: scale(1.1);
         }
 
         /* Hero Section */
         .hero {
-            margin-top: 40px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 40px 20px;
-            width: 100%;
+            padding: 20px;
         }
 
         .profile-img {
-            width: 140px;
-            height: 140px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
-            border: 4px solid #1a1a1a;
+            border: 5px solid #111;
             object-fit: cover;
             margin-bottom: 20px;
+            box-shadow: 0 0 30px rgba(255,255,255,0.05);
         }
 
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 5px;
-        }
+        h1 { font-size: 3rem; margin-bottom: 10px; }
+        .verified-icon { color: #3b82f6; font-size: 1.5rem; }
+        .japanese-name { color: #666; font-size: 1.1rem; margin-bottom: 30px; }
 
-        .verified-icon {
-            color: #3b82f6;
-            font-size: 1.2rem;
-            margin-left: 5px;
-        }
+        /* Tags & Socials */
+        .tags { display: flex; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; justify-content: center; }
+        .tag { border: 1px solid #333; padding: 8px 20px; border-radius: 30px; font-size: 0.8rem; color: #888; }
 
-        .japanese-name {
-            color: #888;
-            font-size: 1rem;
-            margin-bottom: 30px;
-        }
+        .socials { display: flex; gap: 25px; }
+        .socials a { color: #555; font-size: 1.6rem; transition: 0.3s; }
+        .socials a:hover { color: #fff; transform: translateY(-5px); }
 
-        /* Tags */
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 40px;
-        }
-
-        .tag {
-            border: 1px solid #333;
-            padding: 8px 25px;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            color: #fff;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .tag:hover {
-            background: #fff;
-            color: #000;
-        }
-
-        /* Social Icons */
-        .socials {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 60px;
-        }
-
-        .socials a {
-            color: white;
-            font-size: 1.4rem;
-            text-decoration: none;
-            opacity: 0.6;
-            transition: 0.3s;
-        }
-
-        .socials a:hover {
-            opacity: 1;
-            transform: translateY(-5px);
-        }
-
-        /* Sections (Scroll කරන විට පෙනෙන කොටස්) */
+        /* Sections Styling */
         section {
             padding: 100px 20px;
-            width: 100%;
-            max-width: 1100px;
+            max-width: 900px;
+            margin: 0 auto;
             text-align: center;
-            border-top: 1px solid #1a1a1a;
+            border-top: 1px solid #111;
         }
+
+        h2 { font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 5px; color: #fff; }
+
+        .content-card {
+            background: #0f0f0f;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #1a1a1a;
+            color: #888;
+        }
+
+        .info-row { margin: 15px 0; font-size: 1.1rem; }
+        .info-row b { color: #fff; margin-right: 10px; }
 
         /* Footer */
         footer {
-            padding: 50px;
-            font-size: 0.9rem;
-            color: #444;
+            padding: 40px;
             text-align: center;
+            color: #222;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            header { padding: 20px; }
+            .close-btn { right: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
+    <header>
         <div class="logo">JANITH<span>SATHSARA</span></div>
-        <div class="menu-icon"><i class="fas fa-bars"></i></div>
-    </nav>
+        <div class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    </header>
 
-    <div class="nav-container">
-        <a href="#home" class="nav-item active">Home</a>
-        <a href="#about" class="nav-item">About</a>
-        <a href="#skills" class="nav-item">Skills</a>
-        <a href="#projects" class="nav-item">Projects</a>
-        <a href="#services" class="nav-item">Services</a>
-        <a href="#contact" class="nav-item">Contact</a>
+    <div class="nav-overlay" id="navOverlay">
+        <div class="close-btn" onclick="toggleMenu()">&times;</div>
+        <a href="#home" onclick="toggleMenu()">HOME</a>
+        <a href="#about" onclick="toggleMenu()">ABOUT</a>
+        <a href="#skills" onclick="toggleMenu()">SKILLS</a>
+        <a href="#projects" onclick="toggleMenu()">PROJECTS</a>
+        <a href="#services" onclick="toggleMenu()">SERVICES</a>
+        <a href="#contact" onclick="toggleMenu()">CONTACT</a>
     </div>
 
     <div class="hero" id="home">
         <img src="https://files.catbox.moe/924js9.jpg" alt="Profile" class="profile-img">
-        
         <h1>Janith Sathsara <i class="fas fa-check-circle verified-icon"></i></h1>
         <p class="japanese-name">ジャニット・サトサラ</p>
 
         <div class="tags">
             <span class="tag">Web Developer</span>
-            <span class="tag">Student</span>
             <span class="tag">Designer</span>
             <span class="tag">Coder</span>
         </div>
 
         <div class="socials">
             <a href="https://www.facebook.com/share/1CCx4tUSzi/"><i class="fab fa-facebook"></i></a>
-            <a href="https://github.com/jsathsara441-del/My-/blob/main/Index.html"><i class="fab fa-github"></i></a>
-            <a href="https://youtube.com/@janitech-b8d?si=f_rWdsiVNJ7xKxzq"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-spotify"></i></a>
+            <a href="https://github.com/jsathsara441-del/"><i class="fab fa-github"></i></a>
+            <a href="https://youtube.com/@janitech-b8d"><i class="fab fa-youtube"></i></a>
         </div>
     </div>
 
     <section id="about">
         <h2>About Me</h2>
-        <p style="color: #888; margin-top: 20px;">name:- D.M.Janith sathsara
-                                                   eag:-18
-                                                   skill:-html,css,javascript</p>
+        <div class="content-card">
+            <div class="info-row"><b>Full Name:</b> D.M. Janith Sathsara</div>
+            <div class="info-row"><b>Age:</b> 18</div>
+            <div class="info-row"><b>Passion:</b> Creating unique digital experiences through clean code.</div>
+        </div>
     </section>
 
     <section id="skills">
-        <h2>My Skills</h2>
-        <p style="color: #888; margin-top: 20px;">HTML, CSS, JavaScript, Photoshop...</p>
+        <h2>Skills</h2>
+        <div class="tags">
+            <span class="tag">HTML5</span><span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span><span class="tag">Photoshop</span>
+            <span class="tag">UI Design</span><span class="tag">Bot Development</span>
+        </div>
     </section>
 
     <section id="projects">
         <h2>Projects</h2>
-        <p style="color: #888; margin-top: 20px;">web desaing,mini bot devalop</p>
+        <div class="content-card">
+            <p>Modern Web Portfolios, Mini Automation Bots, and Responsive Templates.</p>
+        </div>
     </section>
 
     <section id="services">
         <h2>Services</h2>
-        <p style="color: #888; margin-top: 20px;">Web Design, UI/UX, Coding...</p>
+        <div class="content-card">
+            <p>Custom Web Design, Frontend Development, and Graphics Design.</p>
+        </div>
     </section>
 
     <section id="contact">
-        <h2>Contact Me</h2>
-        <p style="color: #888; margin-top: 20px;">Email: jsathsara441@gmail.com
-                                                  numbar: 94761427943</p>
+        <h2>Contact</h2>
+        <div class="content-card">
+            <div class="info-row"><b>Email:</b> jsathsara441@gmail.com</div>
+            <div class="info-row"><b>WhatsApp:</b> +94 76 142 7943</div>
+        </div>
     </section>
 
     <footer>
-        <p>Janith Sathsara &copy; 2026</p>
+        <p>JANITH SATHSARA &copy; 2026</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navOverlay');
+            menu.classList.toggle('active');
+            
+            // Disable scroll when menu is open
+            if(menu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
+    </script>
 
 </body>
 </html>
