@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Janith Sathsara | Portfolio</title>
+    <title>Thenuja Sathsara | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -52,7 +52,7 @@
             color: #fff;
         }
 
-        /* Navigation Overlay */
+        /* Nav Overlay */
         .nav-overlay {
             position: fixed;
             top: 0;
@@ -69,9 +69,7 @@
             transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
         }
 
-        .nav-overlay.active {
-            transform: translateY(0);
-        }
+        .nav-overlay.active { transform: translateY(0); }
 
         .close-btn {
             position: absolute;
@@ -82,18 +80,15 @@
         }
 
         .nav-overlay a {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 600;
             color: #444;
             text-decoration: none;
-            margin: 15px 0;
+            margin: 10px 0;
             transition: 0.3s;
         }
 
-        .nav-overlay a:hover {
-            color: #fff;
-            transform: scale(1.1);
-        }
+        .nav-overlay a:hover { color: #fff; transform: scale(1.1); }
 
         /* Hero Section */
         .hero {
@@ -120,119 +115,96 @@
         .verified-icon { color: #3b82f6; font-size: 1.5rem; }
         .japanese-name { color: #666; font-size: 1.1rem; margin-bottom: 30px; }
 
+        /* Custom Button Thenuja Sathsara */
+        .btn-thenuja {
+            display: inline-block;
+            padding: 12px 35px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 2px;
+            background: transparent;
+            border: 2px solid #333;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .btn-thenuja:hover {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+            box-shadow: 0 10px 20px rgba(255,255,255,0.1);
+            transform: translateY(-3px);
+        }
+
         /* Tags & Socials */
-        .tags { display: flex; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; justify-content: center; }
+        .tags { display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; justify-content: center; }
         .tag { border: 1px solid #333; padding: 8px 20px; border-radius: 30px; font-size: 0.8rem; color: #888; }
 
-        .socials { display: flex; gap: 25px; }
+        .socials { display: flex; gap: 25px; margin-top: 20px;}
         .socials a { color: #555; font-size: 1.6rem; transition: 0.3s; }
         .socials a:hover { color: #fff; transform: translateY(-5px); }
 
         /* Sections Styling */
         section {
             padding: 100px 20px;
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
             border-top: 1px solid #111;
         }
 
-        h2 { font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 5px; color: #fff; }
+        h2 { font-size: 2.2rem; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 5px; color: #fff; }
 
         .content-card {
             background: #0f0f0f;
-            padding: 40px;
+            padding: 30px;
             border-radius: 20px;
             border: 1px solid #1a1a1a;
             color: #888;
+            transition: 0.3s;
         }
+
+        .content-card:hover { border-color: #333; }
 
         .info-row { margin: 15px 0; font-size: 1.1rem; }
         .info-row b { color: #fff; margin-right: 10px; }
 
-        /* Projects Grid Layout */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
-
-        .project-card {
-            background: #0f0f0f;
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid #1a1a1a;
-            transition: 0.3s ease;
-            text-align: center;
-        }
-
-        .project-card:hover {
-            border-color: #3b82f6;
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .project-icon {
-            font-size: 2.5rem;
+        /* Projects List */
+        .project-link {
+            display: block;
             color: #3b82f6;
-            margin-bottom: 20px;
-        }
-
-        .project-card h3 {
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-            color: #fff;
-        }
-
-        .project-card p {
-            color: #888;
-            font-size: 0.9rem;
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-
-        /* Styled Button */
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: #fff;
-            color: #000;
             text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: 0.3s;
+            margin: 10px 0;
+            font-weight: 500;
         }
-
-        .btn:hover {
-            background: #3b82f6;
-            color: #fff;
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
-        }
+        .project-link:hover { text-decoration: underline; }
 
         /* Footer */
         footer {
-            padding: 60px 40px;
+            padding: 40px;
             text-align: center;
-            color: #444;
-            font-size: 0.9rem;
-            border-top: 1px solid #111;
+            color: #333;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
         }
 
         /* Mobile Adjustments */
         @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
+            h1 { font-size: 2.2rem; }
             header { padding: 20px; }
             .close-btn { right: 20px; }
-            .project-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">JANITH<span>SATHSARA</span></div>
+        <div class="logo">THENUJA<span>SATHSARA</span></div>
         <div class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
     </header>
 
@@ -242,96 +214,74 @@
         <a href="#about" onclick="toggleMenu()">ABOUT</a>
         <a href="#skills" onclick="toggleMenu()">SKILLS</a>
         <a href="#projects" onclick="toggleMenu()">PROJECTS</a>
-        <a href="#services" onclick="toggleMenu()">SERVICES</a>
         <a href="#contact" onclick="toggleMenu()">CONTACT</a>
     </div>
 
     <div class="hero" id="home">
-        <img src="https://files.catbox.moe/924js9.jpg" alt="Profile" class="profile-img">
-        <h1>Janith Sathsara <i class="fas fa-check-circle verified-icon"></i></h1>
-        <p class="japanese-name">ジャニット・サトサラ</p>
+        <img src="https://files.catbox.moe/nkz0ek.jpg" alt="Profile" class="profile-img">
+        <h1>Thenuja Sathsara <i class="fas fa-check-circle verified-icon"></i></h1>
+        <p class="japanese-name">テヌジャ・ササラ</p>
 
         <div class="tags">
-            <span class="tag">Web Developer</span>
-            <span class="tag">Designer</span>
-            <span class="tag">Coder</span>
+            <span class="tag">Photo Editor</span>
+            <span class="tag">Management</span>
+            <span class="tag">Drum Player</span>
         </div>
 
+        <a href="#contact" class="btn-thenuja">Thenuja Sathsara</a>
+
         <div class="socials">
-            <a href="https://www.facebook.com/share/1CCx4tUSzi/"><i class="fab fa-facebook"></i></a>
+            <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
             <a href="https://github.com/jsathsara441-del/"><i class="fab fa-github"></i></a>
-            <a href="https://youtube.com/@janitech-b8d"><i class="fab fa-youtube"></i></a>
+            <a href="http://www.youtube.com/@ThenujaSathsara-k6g"><i class="fab fa-youtube"></i></a>
+            <a href="https://vm.tiktok.com/ZS98khGdkbUDR-LkDYV/"><i class="fab fa-tiktok"></i></a>
         </div>
     </div>
 
     <section id="about">
         <h2>About Me</h2>
         <div class="content-card">
-            <div class="info-row"><b>Full Name:</b> D.M. Janith Sathsara</div>
-            <div class="info-row"><b>Age:</b> 18</div>
-            <div class="info-row"><b>Passion:</b> Creating unique digital experiences through clean code and modern design.</div>
+            <div class="info-row"><b>Full Name:</b> Thenuja Sathsara</div>
+            <div class="info-row"><b>Age:</b> 16+</div>
+            <div class="info-row"><b>Passion:</b> Creating unique digital experiences and managing online communities.</div>
+            <a href="#contact" class="btn-thenuja" style="font-size: 0.7rem; padding: 8px 20px;">Thenuja Sathsara</a>
         </div>
     </section>
 
     <section id="skills">
         <h2>Skills</h2>
         <div class="tags">
-            <span class="tag">HTML5</span><span class="tag">CSS3</span>
-            <span class="tag">JavaScript</span><span class="tag">Photoshop</span>
-            <span class="tag">UI Design</span><span class="tag">Bot Development</span>
+            <span class="tag">Group Management</span>
+            <span class="tag">Photo Editor</span>
+            <span class="tag">Singer</span>
+            <span class="tag">Drum Player</span>
+            <span class="tag">Crypto Trader</span>
+            <span class="tag">Crypto VIP Admin</span>
         </div>
     </section>
 
     <section id="projects">
         <h2>Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <i class="fab fa-facebook-f project-icon"></i>
-                <h3>FB Video Downloader</h3>
-                <p>පහසුවෙන් ෆේස්බුක් වීඩියෝ බාගත කරගත හැකි වේගවත් වෙබ් අඩවියකි.</p>
-                <a href="https://699e9865958c4ea1793a3892--super-cucurucho-62c58a.netlify.app/" target="_blank" class="btn">View Project</a>
-            </div>
-
-            <div class="project-card">
-                <i class="fas fa-robot project-icon"></i>
-                <h3>Mini Bot Site</h3>
-                <p>ස්වයංක්‍රීය බොට් තාක්ෂණයන් සහ විශේෂාංග ඇතුළත් සරල වෙබ් අඩවියකි.</p>
-                <a href="https://6995e8dcb240941c32bdc314--grand-stroopwafel-baffa5.netlify.app/" target="_blank" class="btn">View Project</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="services">
-        <h2>Services</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <i class="fas fa-code project-icon"></i>
-                <h3>Web Design</h3>
-                <p>Professional and Responsive layouts.</p>
-            </div>
-            <div class="project-card">
-                <i class="fas fa-paint-brush project-icon"></i>
-                <h3>Graphics</h3>
-                <p>Creative UI and Photoshop editing.</p>
-            </div>
+        <div class="content-card">
+            <p>Check out my latest web projects:</p>
+            <a href="https://699e9865958c4ea1793a3892--super-cucurucho-62c58a.netlify.app/" target="_blank" class="project-link">FB Video Downloader</a>
+            <a href="https://6995e8dcb240941c32bdc314--grand-stroopwafel-baffa5.netlify.app/" target="_blank" class="project-link">Mini Bot Site</a>
         </div>
     </section>
 
     <section id="contact">
         <h2>Contact</h2>
         <div class="content-card">
-            <div class="info-row"><b>Email:</b> jsathsara441@gmail.com</div>
-            <div class="info-row"><b>WhatsApp:</b> +94 76 142 7943</div>
+            <p style="margin-bottom: 15px;">Feel free to reach out for collaborations!</p>
+            <div class="info-row"><b>WhatsApp:</b> +94 78 770 9014</div>
+            <a href="https://whatsapp.com/channel/0029Vb6h7WoHbFV44iCGzT3m/" target="_blank" class="project-link">Join My WhatsApp Channel</a>
             <br>
-            <div class="socials" style="justify-content: center;">
-                <a href="https://www.facebook.com/share/1CCx4tUSzi/"><i class="fab fa-facebook"></i></a>
-                <a href="https://github.com/jsathsara441-del/"><i class="fab fa-github"></i></a>
-            </div>
+            <a href="https://wa.me/94787709014" class="btn-thenuja">Thenuja Sathsara</a>
         </div>
     </section>
 
     <footer>
-        <p>JANITH SATHSARA &copy; 2026 | All Rights Reserved</p>
+        <p>THENUJA SATHSARA &copy; 2026</p>
     </footer>
 
     <script>
